@@ -1,4 +1,9 @@
 <resources>
-    <string name="app_name">Bla Bla Wild</string>
+    <string name="app_name">Rechercher</string>
     <string name="action_settings">Settings</string>
+    <string name="buttonSearch">Rechercher</string>
+    <string name="editTextSearchDeparture">Départ</string>
+    <string name="editTextSearchDestination">Destination</string>
+    <string name="editTextSearchDate">Date</string>
+    <string name="Toast">Erreur : il faut renseigner les lieux de Départ ET de Destination</string>
 </resources>

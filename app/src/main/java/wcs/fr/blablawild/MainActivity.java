@@ -8,6 +8,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Intent;
+import android.widget.Button;
+
+import fr.wcs.blablawild.SearchItineraryActivity;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +22,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        final Button buttonItineraire = (Button) findViewById(R.id.buttonItineraire);
+        buttonItineraire .setOnClickListener(new View.OnClickListener() {
+
+        @Override
+
+
+            public void onClick(View v) {
+
+                Intent Search = new Intent(MainActivity.this, SearchItineraryActivity.class);
+                startActivity(Search);
+
+            }
+
+        } ) ;
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -49,4 +69,8 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
+
+

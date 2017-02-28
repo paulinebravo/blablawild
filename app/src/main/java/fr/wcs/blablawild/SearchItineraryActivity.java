@@ -20,12 +20,12 @@ public class SearchItineraryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search_itinerary);
 
         final EditText editTextSearchDeparture = (EditText) findViewById(R.id.editTextSearchDeparture);
-        final EditText editTextSearchDestination = (EditText) findViewById(R.id.edittextSearchDestination);
+        final EditText editTextSearchDestination = (EditText) findViewById(R.id.editTextSearchDestination);
         final EditText editTextSerachDate = (EditText) findViewById(R.id.editTextSearchDate);
         final Button buttonSearch = (Button) findViewById(R.id.buttonSearch);
 
 
-        buttonSearch .setOnClickListener(new View.OnClickListener() {
+        buttonSearch .setOnClickListener(new View.OnClickListener()  {
             public void onClick(View v) {
 
 
@@ -34,8 +34,8 @@ public class SearchItineraryActivity extends AppCompatActivity {
             {   String Depart =  editTextSearchDeparture.getText().toString();
                 String Destination = editTextSearchDestination.getText().toString();
                 Intent Resultat = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
-                Resultat.putExtra("Depart", Depart);
-                Resultat.putExtra("Destination", Destination);
+                Resultat.putExtra("editTextSearchDeparture", Depart);
+                Resultat.putExtra("editTextSearchDestination", Destination);
 
                 startActivity(Resultat);
 
@@ -51,5 +51,16 @@ public class SearchItineraryActivity extends AppCompatActivity {
             }
 
 
+
+
+            }
+
+        }
+        )
+        ;
+
+
     }
+
+
 }

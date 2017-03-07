@@ -14,6 +14,8 @@ import wcs.fr.blablawild.R;
 
 public class SearchItineraryActivity extends AppCompatActivity {
 
+
+    public final static String EXTRA_REQUEST = "result";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,22 +23,25 @@ public class SearchItineraryActivity extends AppCompatActivity {
 
         final EditText editTextSearchDeparture = (EditText) findViewById(R.id.editTextSearchDeparture);
         final EditText editTextSearchDestination = (EditText) findViewById(R.id.editTextSearchDestination);
-        final EditText editTextSerachDate = (EditText) findViewById(R.id.editTextSearchDate);
+        final EditText editTextSearchDate = (EditText) findViewById(R.id.editTextSearchDate);
         final Button buttonSearch = (Button) findViewById(R.id.buttonSearch);
+
 
 
         buttonSearch .setOnClickListener(new View.OnClickListener()  {
             public void onClick(View v) {
 
 
-            if (editTextSearchDeparture.length() != 0 || editTextSearchDestination.length() != 0)
 
-            {   String Depart =  editTextSearchDeparture.getText().toString();
-                String Destination = editTextSearchDestination.getText().toString();
+                if (editTextSearchDeparture.length() != 0 || editTextSearchDestination.length() != 0)
+
+            {   String mDeparture =  editTextSearchDeparture.getText().toString();
+                String mDestination = editTextSearchDestination.getText().toString();
+                String mDate = editTextSearchDate.getText().toString();
+                SearchRequestModel result = new SearchRequestModel(mDeparture, mDestination, mDate);
                 Intent Resultat = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
-                Resultat.putExtra("editTextSearchDeparture", Depart);
-                Resultat.putExtra("editTextSearchDestination", Destination);
 
+                Resultat.putExtra(SearchItineraryActivity.EXTRA_REQUEST,result);
                 startActivity(Resultat);
 
             }

@@ -6,6 +6,7 @@
     <string name="editTextSearchDestination">Destination</string>
     <string name="editTextSearchDate">Date</string>
     <string name="Toast">Erreur : il faut renseigner les lieux de Départ ET de Destination</string>
+    <string name="Toast2">Votre date est le</string>
     <string name="buttonItineraire">RECHERCHER UN ITINERAIRE</string>
     <string name="fleche">--></string>
     <string name="app_name">Rechercher</string>

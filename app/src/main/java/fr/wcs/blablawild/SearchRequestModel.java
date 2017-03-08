@@ -13,7 +13,6 @@ import wcs.fr.blablawild.R;
  */
 
 
-
 public class SearchRequestModel implements Parcelable {
 
 

@@ -15,7 +15,7 @@ import wcs.fr.blablawild.R;
 public class SearchItineraryActivity extends AppCompatActivity {
 
 
-    public final static String EXTRA_REQUEST = "result";
+    public final static String EXTRA_REQUEST = "Result";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,10 +38,10 @@ public class SearchItineraryActivity extends AppCompatActivity {
             {   String mDeparture =  editTextSearchDeparture.getText().toString();
                 String mDestination = editTextSearchDestination.getText().toString();
                 String mDate = editTextSearchDate.getText().toString();
-                SearchRequestModel result = new SearchRequestModel(mDeparture, mDestination, mDate);
+                SearchRequestModel Result = new SearchRequestModel(mDeparture, mDestination, mDate);
                 Intent Resultat = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
 
-                Resultat.putExtra(SearchItineraryActivity.EXTRA_REQUEST,result);
+                Resultat.putExtra(SearchItineraryActivity.EXTRA_REQUEST,Result);
                 startActivity(Resultat);
 
             }

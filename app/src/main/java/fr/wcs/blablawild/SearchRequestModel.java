@@ -5,7 +5,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.widget.EditText;
 
-import wcs.fr.blablawild.R;
 
 
 /**
@@ -16,21 +15,47 @@ import wcs.fr.blablawild.R;
 public class SearchRequestModel implements Parcelable {
 
 
-
     private String mDeparture;
     private String mDestination;
     private String mDate;
 
 
-    public SearchRequestModel(String mDeparture, String mDestination, String mDate) {
+    private SearchRequestModel() {
+
+    }
+
+    public SearchRequestModel(String departure, String destination, String date) {
 
         super();
-        this.mDeparture = mDeparture;
-        this.mDestination = mDestination;
-        this.mDate = mDate;
+        this.mDeparture = departure;
+        this.mDestination = destination;
+        this.mDate = date;
 
 
     }
+
+    private SearchRequestModel(Parcel in) {
+        mDeparture = in.readString();
+        mDestination = in.readString();
+        mDate = in.readString();
+
+    }
+
+    public static final Creator<SearchRequestModel> CREATOR = new Creator<SearchRequestModel>() {
+
+        @Override
+
+        public SearchRequestModel createFromParcel(Parcel in) {
+            return new SearchRequestModel(in);
+
+        }
+
+        @Override
+        public SearchRequestModel[] newArray(int size) {
+            return new SearchRequestModel[size];
+        }
+    };
+
 
     public String getmDeparture() {
         return mDeparture;
@@ -61,30 +86,12 @@ public class SearchRequestModel implements Parcelable {
     }
 
 
-    public static final Parcelable.Creator<SearchRequestModel> CREATOR = new Parcelable.Creator<SearchRequestModel>() {
-
-        @Override
-
-        public SearchRequestModel createFromParcel(Parcel in) {
-            return new SearchRequestModel(in);
-
-        }
-
-        @Override
-        public SearchRequestModel[] newArray(int size) {
-            return new SearchRequestModel[size];
-
-        }
-
-    };
-
-    private SearchRequestModel(Parcel in) {
-        mDeparture = in.readString();
-        mDestination = in.readString();
-        mDate = in.readString();
-
-    }
-
-
 }
+
+
+
+
+
+
+
 

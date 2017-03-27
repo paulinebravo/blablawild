@@ -10,10 +10,14 @@ import android.widget.Toast;
 import java.util.jar.Attributes;
 
 
-import wcs.fr.blablawild.R;
+
 
 public class SearchItineraryActivity extends AppCompatActivity {
 
+    EditText meditTextSearchDeparture;
+    EditText meditTextSearchDestination;
+    EditText meditTextSearchDate;
+    Button buttonSearch;
 
     public final static String EXTRA_REQUEST = "Result";
     @Override
@@ -21,10 +25,10 @@ public class SearchItineraryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_itinerary);
 
-        final EditText editTextSearchDeparture = (EditText) findViewById(R.id.editTextSearchDeparture);
-        final EditText editTextSearchDestination = (EditText) findViewById(R.id.editTextSearchDestination);
-        final EditText editTextSearchDate = (EditText) findViewById(R.id.editTextSearchDate);
-        final Button buttonSearch = (Button) findViewById(R.id.buttonSearch);
+       meditTextSearchDeparture = (EditText) findViewById(R.id.editTextSearchDeparture);
+        meditTextSearchDestination = (EditText) findViewById(R.id.editTextSearchDestination);
+       meditTextSearchDate = (EditText) findViewById(R.id.editTextSearchDate);
+       buttonSearch = (Button) findViewById(R.id.buttonSearch);
 
 
 
@@ -33,12 +37,13 @@ public class SearchItineraryActivity extends AppCompatActivity {
 
 
 
-                if (editTextSearchDeparture.length() != 0 || editTextSearchDestination.length() != 0)
+                if (meditTextSearchDeparture.length() != 0 || meditTextSearchDestination.length() != 0)
 
-            {   String mDeparture =  editTextSearchDeparture.getText().toString();
-                String mDestination = editTextSearchDestination.getText().toString();
-                String mDate = editTextSearchDate.getText().toString();
-                SearchRequestModel Result = new SearchRequestModel(mDeparture, mDestination, mDate);
+            {
+                String departure =  meditTextSearchDeparture.getText().toString();
+                String destination = meditTextSearchDestination.getText().toString();
+                String date = meditTextSearchDate.getText().toString();
+                SearchRequestModel Result = new SearchRequestModel(departure, destination, date);
                 Intent Resultat = new Intent(SearchItineraryActivity.this, ViewSearchItineraryResultsListActivity.class);
 
                 Resultat.putExtra(SearchItineraryActivity.EXTRA_REQUEST,Result);
@@ -52,7 +57,6 @@ public class SearchItineraryActivity extends AppCompatActivity {
 
                 Toast.makeText(SearchItineraryActivity.this, getString(R.string.Toast), Toast.LENGTH_SHORT).show();
 
-
             }
 
 
@@ -61,6 +65,7 @@ public class SearchItineraryActivity extends AppCompatActivity {
             }
 
         }
+
         )
         ;
 

@@ -9,24 +9,28 @@ import android.view.View;
 import android.view.Menu;
 import android.content.Intent;
 import android.widget.Button;
+import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class MainActivity extends AppCompatActivity {
 
-    @Override
+
+    private FirebaseAuth firebaseAuth;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+
 
         final Button buttonItineraire = (Button) findViewById(R.id.buttonItineraire);
-        buttonItineraire .setOnClickListener(new View.OnClickListener() {
+        buttonItineraire.setOnClickListener(new View.OnClickListener() {
 
-        final
 
-        @Override
+            @Override
 
 
             public void onClick(View v) {
@@ -35,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Search);
             }
 
-        } ) ;
+        });
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -49,27 +53,30 @@ public class MainActivity extends AppCompatActivity {
 
 
         final Button buttonProposition = (Button) findViewById(R.id.buttonProposition);
-        buttonProposition .setOnClickListener(new View.OnClickListener() {
+        buttonProposition.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
                 Intent Propose = new Intent(MainActivity.this, SubmitItineraryActivity.class);
                 startActivity(Propose);
+
+
+            }
+        });
+
+
+        final Button buttonCompte = (Button) findViewById(R.id.buttonCompte);
+        buttonCompte.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent goLogin = new Intent(MainActivity.this, AccountActivity.class);
+                startActivity(goLogin);
+            }
+        });
+
+
     }
-
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-
-
-
-
-})
-
-
-;}
-
 }
+
+
+
+

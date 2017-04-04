@@ -10,6 +10,17 @@
     <string name="Toast3">Votre trajet est publié</string>
     <string name="buttonItineraire">RECHERCHER UN ITINERAIRE</string>
     <string name="fleche">--></string>
-    <string name="app_name">Rechercher</string>
-
+    <string name="auth_failed">Renseignez votre email</string>
+    <string name="textViewEmailUser">Votre email</string>
+    <string name="textViewPasswordUser">Choix du mot de passe</string>
+    <string name="buttonRegister">Inscription</string>
+    <string name="textViewEmailLogin">Email utilisateur</string>
+    <string name="textViewPasswordLogin">Mot de passe utilisateur</string>
+    <string name="buttonLogin">Connection</string>
+    <string name="textViewChoix">OU</string>
+    <string name="buttonInscription">Inscription</string>
+    <string name="buttonMenu">Menu</string>
+    <string name="buttonCompte">Acces Compte</string>
+    <string name="textViewSignUp">Inscris-toi</string>
+    <string name="textViewSignIn">Déjà inscrit ? Accède à ton compte</string>
 </resources>

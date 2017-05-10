@@ -23,4 +23,10 @@
     <string name="buttonCompte">Acces Compte</string>
     <string name="textViewSignUp">Inscris-toi</string>
     <string name="textViewSignIn">Déjà inscrit ? Accède à ton compte</string>
+    <string name="userDisplayName">Choisir un pseudo</string>
+    <string name="textViewVotreCompte">Votre compte</string>
+    <string name="buttonModif">Valider les modifications</string>
+    <string name="imageError">Photo non chargée</string>
+    <string name="bonjourDisplay">Bonjour</string>
+
 </resources>

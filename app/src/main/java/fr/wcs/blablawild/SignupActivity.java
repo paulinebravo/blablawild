@@ -16,6 +16,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 import static fr.wcs.blablawild.R.id.textViewSignin;
 
@@ -31,6 +33,8 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     private FirebaseAuth auth;
     private ProgressDialog progressDialog;
     private TextView textViewSignIn;
+    private EditText userName;
+    static String displayName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
         inputEmail = (EditText) findViewById(R.id.editTextEmailUser);
         inputPassword = (EditText) findViewById(R.id.editTextPasswordUser);
         textViewSignIn = (TextView) findViewById(textViewSignin);
+        userName=(EditText) findViewById(R.id.editTextDisplayName);
 
         //progress dialog
 
@@ -83,23 +88,34 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 .addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-                        //si la tâche est ok
-                        if (task.isSuccessful()) {
-                            //l'activity sign up démarre
-                            finish();
-                            startActivity(new Intent(SignupActivity.this, AccountActivity.class));
+                        FirebaseUser user = auth.getCurrentUser();
+                        displayName = userName.getText().toString().trim();
+                        UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                .setDisplayName(displayName)
+                                .build();
+                        user.updateProfile(profileUpdates).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
 
-                        } else {
-                            //sinon le message d'erreur s'affiche
-                            Toast.makeText(SignupActivity.this, "Email et mot de passe requis", Toast.LENGTH_LONG).show();
+                                Toast.makeText(SignupActivity.this,R.string.bonjourDisplay+displayName,Toast.LENGTH_SHORT);
+                                Intent intent = new Intent(SignupActivity.this, MainActivity.class);
+                                finish();
+                                startActivity(intent);
+                            }
+                        });
+
+                        if (!task.isSuccessful()) {
+                            Toast.makeText(SignupActivity.this, R.string.auth_failed,Toast.LENGTH_SHORT).show();
                         }
-                        progressDialog.dismiss();
 
+                        // ...
                     }
                 });
 
+
     }
+
+
     public void onClick(View view) {
 
         if (view == btnSignUp) {

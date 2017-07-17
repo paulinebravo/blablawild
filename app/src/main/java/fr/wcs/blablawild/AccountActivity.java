@@ -90,7 +90,6 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
             imageViewProfile = (ImageView) findViewById(R.id.imageViewProfile);
             buttonLogout = (Button) findViewById(R.id.buttonDisconnect);
             buttonMenu = (Button) findViewById(R.id.buttonMenu);
-            editTextDisplayName = (EditText) findViewById(R.id.userDisplayName);
             DisplayName = (TextView) findViewById(R.id.textViewDisplayName);
 
             //On relie le listener au bouton
@@ -103,7 +102,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
 
             // le textview récupère le display name
 
-           DisplayName.setText("Bienvenue "+user.getDisplayName());
+           DisplayName.setText(getString(R.string.welcometext)+user.getDisplayName());
 
 
 
@@ -121,7 +120,7 @@ public class AccountActivity extends AppCompatActivity implements View.OnClickLi
 
         gallery.setAction(Intent.ACTION_GET_CONTENT);
 
-        startActivityForResult(Intent.createChooser(gallery, "Select Picture"), PICK_PHOTO);
+        startActivityForResult(Intent.createChooser(gallery, getString(R.string.SelectPicture)), PICK_PHOTO);
     }
 
     @Override

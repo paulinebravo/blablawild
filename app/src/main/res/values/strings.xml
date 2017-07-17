@@ -9,7 +9,7 @@
     <string name="Toast2">Votre date est le</string>
     <string name="Toast3">Votre trajet est publié</string>
     <string name="buttonItineraire">RECHERCHER UN ITINERAIRE</string>
-    <string name="fleche">--></string>
+    <string name="fleche" translatable="false">--></string>
     <string name="auth_failed">Renseignez votre email</string>
     <string name="textViewEmailUser">Votre email</string>
     <string name="textViewPasswordUser">Choix du mot de passe</string>
@@ -28,5 +28,10 @@
     <string name="buttonModif">Valider les modifications</string>
     <string name="imageError">Photo non chargée</string>
     <string name="bonjourDisplay">Bonjour</string>
+    <string name="welcometext">Bienvenue</string>
+    <string name="SelectPicture">Select Picture</string>
+    <string name="EnterEmail">Renseigne ton email</string>
+    <string name="EnterPassword">Renseigne ton mot de passe</string>
+    <string name="AccountAccess">Accès au compte...</string>
 
 </resources>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="textViewSignUp">Inscris-toi</string>
+    <string name="AccountAccess">"Account access "</string>
+    <string name="EnterEmail">Enter your email</string>
+    <string name="EnterPassword">Enter your password</string>
+    <string name="SelectPicture">Select picture</string>
+    <string name="Toast">Error : you have to write departure AND destination locations</string>
+    <string name="Toast2">"Date is : "</string>
+    <string name="Toast3">Your trip is published</string>
+    <string name="action_settings">Settings</string>
+    <string name="auth_failed">Enter your email</string>
+    <string name="bonjourDisplay">Hello</string>
+    <string name="buttonCompte">Account access</string>
+    <string name="buttonInscription">Subscription</string>
+    <string name="buttonItineraire">"SEARCH AN ITINERARY "</string>
+    <string name="buttonLogin">Connection</string>
+    <string name="buttonMenu">Menu</string>
+    <string name="buttonModif">Accept the changes</string>
+    <string name="buttonRegister">Subscribe</string>
+    <string name="buttonSearch">Search</string>
+    <string name="editTextSearchDate">Date</string>
+    <string name="editTextSearchDeparture">Departure</string>
+    <string name="editTextSearchDestination">Destination</string>
+    <string name="imageError">Image error</string>
+    <string name="textViewChoix">OR</string>
+    <string name="textViewEmailLogin">User email</string>
+    <string name="textViewEmailUser">Your email</string>
+    <string name="textViewPasswordLogin">User password</string>
+    <string name="textViewPasswordUser">"Password choice "</string>
+    <string name="textViewSignIn">"Already signed ? Account access "</string>
+    <string name="textViewVotreCompte">Your account</string>
+    <string name="userDisplayName">Choose a pseudo</string>
+    <string name="welcometext">Welcome</string>
+</resources>

@@ -72,17 +72,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //On check si email et mot de passe sont renseignés
         if(TextUtils.isEmpty(email)){
-            Toast.makeText(LoginActivity.this,"Renseigne ton email",Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, R.string.EnterEmail,Toast.LENGTH_LONG).show();
             return;
         }
 
         if(TextUtils.isEmpty(password)){
-            Toast.makeText(LoginActivity.this,"Renseigne ton mot de passe",Toast.LENGTH_LONG).show();
+            Toast.makeText(LoginActivity.this, R.string.EnterPassword,Toast.LENGTH_LONG).show();
             return;
         }
 
         //Si email et mots de passe sont renseignés alors apparait la progressDialog
-        progressDialog.setMessage("Accès au compte...");
+        progressDialog.setMessage(getString(R.string.AccountAccess));
         progressDialog.show();
 
 

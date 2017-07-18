@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text="Date"
+        android:focusable="false"
         android:ems="10"
         android:id="@+id/editTextSearchDate"
         android:layout_alignTop="@+id/editTextSearchDestination"
